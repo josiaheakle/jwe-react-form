@@ -38,7 +38,8 @@ export const TextInput: React.FC<TextInputProps> = ({
     display: "flex",
     flexDirection: "column",
     position: "relative",
-    margin: "0.5rem 0",
+    width: "12rem",
+    margin: "0.4rem 0",
   };
 
   let labelStyles: React.CSSProperties = {

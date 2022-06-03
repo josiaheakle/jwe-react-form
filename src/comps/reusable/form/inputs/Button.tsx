@@ -19,7 +19,7 @@ export const Button: React.FC<ButtonProps> = ({
     cursor: "pointer",
     borderRadius: "0.5rem",
     border: `1px solid ${borderColor ? borderColor : "black"}`,
-    padding: "0.5rem 0.8rem",
+    padding: "0.5rem 0.7rem 0.5rem 0.7rem",
     transition: "transform 250ms",
     color: textColor ? textColor : "black",
   };

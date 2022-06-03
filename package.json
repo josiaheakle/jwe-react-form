@@ -1,7 +1,7 @@
 {
   "name": "jwe-react-form",
   "private": false,
-  "version": "0.3.0",
+  "version": "0.3.2",
   "author": "Josiah Eakle",
   "description": "A React component package to make managing forms intuitive and easy.",
   "license": "MIT",
