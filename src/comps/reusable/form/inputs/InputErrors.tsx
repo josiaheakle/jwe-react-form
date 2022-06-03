@@ -27,7 +27,7 @@ export const InputErrors: React.FC<InputErrorsProps> = ({ errors }) => {
     <ul style={listStyles}>
       {errors.map((e, i) => (
         <li style={listItemStyles} key={i}>
-          <i style={{ marginRight: ".3rem" }}>⚠</i>
+          <span style={{ marginRight: ".3rem" }}>⚠</span>
           {e}
         </li>
       ))}
