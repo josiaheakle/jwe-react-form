@@ -3,6 +3,7 @@ import * as React from "react";
 import { FormErrors } from "../../../types/FormErrors";
 
 import * as css from "./Form.module.css";
+import { Button } from "./inputs/Button";
 
 interface FormProps {
   children?: React.ReactNode;
@@ -15,12 +16,7 @@ interface FormProps {
  * My solution to form handling.
  * This component dynamically injects errors for children inputs when needed.
  */
-export const Form: React.FC<FormProps> = ({
-  children,
-  errors,
-  hideSubmit,
-  onSubmit,
-}) => {
+export const Form: React.FC<FormProps> = ({ children, errors, hideSubmit, onSubmit }) => {
   /**
    * Rerenders children when props is updated, dynamically adding errors to each input field if applicable.
    */
@@ -36,11 +32,7 @@ export const Form: React.FC<FormProps> = ({
   return (
     <form className={`${css.Form}`} onSubmit={onSubmit}>
       {childrenInputsWithErrors}
-      {hideSubmit ? null : (
-        <button type="submit" className={`${css.Submit}`}>
-          Submit
-        </button>
-      )}
+      {hideSubmit ? null : <Button type="submit">Submit</Button>}
     </form>
   );
 };

@@ -1,0 +1,68 @@
+.TextInputContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0.5rem 0;
+}
+
+.TextInputContainer > label {
+  position: absolute;
+  top: 0.3rem;
+  left: 0.8rem;
+
+  padding: 0 0.25rem;
+
+  opacity: 0.8;
+  pointer-events: none;
+  transition: top 250ms, left 250ms, font-size 250ms, font-weight 250ms,
+    opacity 250ms;
+}
+
+.TextInputContainer.focus > label {
+  background-color: var(--bg-color);
+  opacity: 1;
+  font-weight: bold;
+  font-size: 0.7rem;
+  top: -0.5rem;
+  left: 1rem;
+}
+
+.TextInputContainer > input {
+  padding: 0.6rem 1rem 0.4rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: 1px solid var(--border-color);
+  transition: outline 250ms;
+}
+
+.TextInputContainer > input:focus-visible,
+.TextInputContainer > input:hover {
+  outline-width: 2px;
+}
+
+.InputErrors {
+  list-style-type: none;
+  color: red;
+  padding: 0;
+  padding: 0 0 0 1rem;
+  margin: 0;
+}
+
+.Button {
+  background-color: transparent;
+  margin-top: 0.25rem;
+
+  cursor: pointer;
+  border-radius: 0.5rem;
+  border: none;
+  /* border: 1px solid var(--border-color); */
+  outline: 1px solid var(--border-color);
+  padding: 0.5rem 0.8rem;
+  transition: transform 250ms, outline 250ms;
+}
+
+.Button:focus-visible,
+.Button:hover {
+  transform: scale(1.1);
+  outline-width: 2px;
+}
