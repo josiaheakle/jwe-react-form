@@ -55,7 +55,7 @@ export const TextInput: React.FC<TextInputProps> = ({
   labelStyles = isFocused
     ? {
         ...labelStyles,
-        backgroundColor: backgroundColor ? backgroundColor : "black",
+        backgroundColor: backgroundColor ? backgroundColor : "white",
         opacity: 1,
         fontWeight: "bold",
         fontSize: "0.7rem",
