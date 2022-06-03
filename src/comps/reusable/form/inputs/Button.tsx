@@ -1,11 +1,42 @@
 import * as React from "react";
 
-import * as css from "./Inputs.module.css";
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  borderColor?: string;
+  textColor?: string;
+}
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+export const Button: React.FC<ButtonProps> = ({
+  borderColor,
+  textColor,
+  ...props
+}) => {
+  const [isHover, setIsHover] = React.useState(false);
+  const [isFocus, setIsFocus] = React.useState(false);
 
-export const Button: React.FC<ButtonProps> = ({ className, ...props }) => {
+  let buttonStyles: React.CSSProperties = {
+    backgroundColor: "transparent",
+    marginTop: "0.25rem",
+    cursor: "pointer",
+    borderRadius: "0.5rem",
+    border: `1px solid ${borderColor ? borderColor : "black"}`,
+    padding: "0.5rem 0.8rem",
+    transition: "transform 250ms",
+    color: textColor ? textColor : "black",
+  };
+
+  const buttonStylesHover: React.CSSProperties = {
+    ...buttonStyles,
+    transform: "scale(1.1)",
+  };
+
   return (
-    <button className={`${css.Button}  ${className || ""}`} {...props}></button>
+    <button
+      onFocus={() => setIsFocus(true)}
+      onBlur={() => setIsFocus(false)}
+      onMouseOver={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
+      style={isHover || isFocus ? buttonStylesHover : buttonStyles}
+      {...props}
+    />
   );
 };

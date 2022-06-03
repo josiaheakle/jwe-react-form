@@ -16,7 +16,12 @@ interface FormProps {
  * My solution to form handling.
  * This component dynamically injects errors for children inputs when needed.
  */
-export const Form: React.FC<FormProps> = ({ children, errors, hideSubmit, onSubmit }) => {
+export const Form: React.FC<FormProps> = ({
+  children,
+  errors,
+  hideSubmit,
+  onSubmit,
+}) => {
   /**
    * Rerenders children when props is updated, dynamically adding errors to each input field if applicable.
    */
@@ -29,8 +34,14 @@ export const Form: React.FC<FormProps> = ({ children, errors, hideSubmit, onSubm
     return child;
   });
 
+  const formStyles: React.CSSProperties = {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  };
+
   return (
-    <form className={`${css.Form}`} onSubmit={onSubmit}>
+    <form style={formStyles} onSubmit={onSubmit}>
       {childrenInputsWithErrors}
       {hideSubmit ? null : <Button type="submit">Submit</Button>}
     </form>

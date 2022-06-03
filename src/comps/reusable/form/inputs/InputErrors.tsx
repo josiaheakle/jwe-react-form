@@ -7,8 +7,15 @@ interface InputErrorsProps {
 }
 
 export const InputErrors: React.FC<InputErrorsProps> = ({ errors }) => {
+  const listStyles: React.CSSProperties = {
+    listStyleType: "none",
+    color: "red",
+    padding: "0 0 0 1rem",
+    margin: 0,
+  };
+
   return (
-    <ul className={`${css.InputErrors}`}>
+    <ul style={listStyles}>
       {errors.map((e, i) => (
         <li key={i}>{e}</li>
       ))}
