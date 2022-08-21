@@ -1,9 +1,7 @@
 import * as React from "react";
 
 import { FormErrors } from "../../../types/FormErrors";
-
-import * as css from "./Form.module.css";
-import { Button } from "./inputs/Button";
+import { Button } from "../inputs/Button";
 
 interface FormProps {
   children?: React.ReactNode;

@@ -16,7 +16,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "strictPropertyInitialization": false,
-    "outDir": "./dist/",
+    "outDir": "dist",
     "declaration": true
   },
   "include": ["src"],

@@ -1,0 +1,62 @@
+/* 
+
+	const containerStyles: React.CSSProperties = {
+
+	};
+
+	let labelStyles: React.CSSProperties = {
+
+	};
+	labelStyles = isFocused
+		? {
+				...labelStyles,
+
+		  }
+		: labelStyles;
+
+	let inputStyles: React.CSSProperties = {
+
+	};
+	inputStyles =
+		isHover || isFocused
+			? {
+					...inputStyles,
+			  }
+			: inputStyles;
+
+
+*/
+
+.container {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 12rem;
+	margin: 0.4rem 0;
+}
+
+.label {
+	position: absolute;
+	top: 0.3rem;
+	left: 0.8rem;
+	padding: 0 0.25rem;
+	opacity: 0.8;
+	pointer-events: none;
+	transition: top 250ms, left 250ms, font-size 250ms, font-weight 250ms, opacity 250ms;
+}
+
+.input {
+	padding: 0.6rem 1rem 0.4rem 1rem;
+	border-radius: 1rem;
+	border: 1px solid black;
+	background-color: white;
+}
+
+:global(.focus).container > .label {
+	background-color: white;
+	opacity: 1;
+	font-weight: bold;
+	font-size: 0.7rem;
+	top: -0.5rem;
+	left: 1rem;
+}

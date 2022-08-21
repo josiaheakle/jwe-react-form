@@ -1,0 +1,7 @@
+.gitignore
+index.html
+nodemon.json
+tsconfig.json
+tsconfig.node.json
+vite.config.js
+/src
