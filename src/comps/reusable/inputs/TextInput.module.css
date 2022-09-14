@@ -46,17 +46,15 @@
 }
 
 .input {
+	outline: none;
 	padding: 0.6rem 1rem 0.4rem 1rem;
 	border-radius: 1rem;
 	border: 1px solid black;
-	background-color: white;
 }
 
 :global(.focus).container > .label {
-	background-color: white;
 	opacity: 1;
 	font-weight: bold;
-	font-size: 0.7rem;
-	top: -0.5rem;
-	left: 1rem;
+	font-size: 0.6rem;
+	top: -0.1rem;
 }

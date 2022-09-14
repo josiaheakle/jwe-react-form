@@ -20,7 +20,6 @@ export interface TextInputProps extends React.HTMLProps<HTMLInputElement> {
 
 export const TextInput: React.FC<TextInputProps> = ({
 	label,
-	id,
 	errors,
 	onChange,
 	backgroundColor,
@@ -42,7 +41,7 @@ export const TextInput: React.FC<TextInputProps> = ({
 
 	return (
 		<div className={`${css.container} ${isFocused ? "focus" : ""} ${isHover ? "hover" : ""}`}>
-			<label className={`${css.label}`} htmlFor={id}>
+			<label className={`${css.label}`} htmlFor={props.id}>
 				{label}
 			</label>
 			<input
@@ -53,7 +52,7 @@ export const TextInput: React.FC<TextInputProps> = ({
 				onFocus={() => setIsFocused(true)}
 				onBlur={() => setIsFocused(false)}
 				onChange={onChangeCombined}
-				className={`${props.className} ${css.input}`}
+				className={`${props.className ?? ""} ${css.input}`}
 			/>
 			{errors ? <InputErrors errors={errors} /> : null}
 		</div>
